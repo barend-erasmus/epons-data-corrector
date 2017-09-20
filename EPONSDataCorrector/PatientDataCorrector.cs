@@ -52,9 +52,6 @@ namespace EPONSDataCorrector
                             RemoveDuplicate(keepPatientId, id);
                         }
                     }
-                }else
-                {
-
                 }
             }
         }
@@ -74,11 +71,9 @@ namespace EPONSDataCorrector
                 }
 
                 IList<dynamic> patientMatches = patients.Where((x) => 
-                //x.Firstname == patient.Firstname &&
-                //x.Lastname == patient.Lastname &&
+                x.Firstname == patient.Firstname &&
+                x.Lastname == patient.Lastname &&
                 x.DateOfBirth == patient.DateOfBirth &&
-                x.GenderId == patient.GenderId &&
-                x.RaceId == patient.RaceId &&
                 x.IdentificationNumber == x.IdentificationNumber).ToList();
 
                 if (patientMatches.Count > 1)
